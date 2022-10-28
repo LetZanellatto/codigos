@@ -1,0 +1,19 @@
+#include <math.h>
+#include <stdio.h>
+
+int main()
+{
+   double a, b, c, MaiorAB, MaiorBC, MaiorABC;
+   scanf("%lf %lf %lf", &a, &b, &c);
+    MaiorAB = (a+b+abs(a-b))/2;
+    MaiorBC = (b+c+abs(b-c))/2;
+    MaiorABC = (MaiorAB+MaiorBC+abs(MaiorAB-MaiorBC))/2;
+  
+   
+   printf("%.lf eh o maior\n", MaiorABC);
+   
+   
+    return 0;
+}
+
+
