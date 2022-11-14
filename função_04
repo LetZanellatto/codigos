@@ -1,0 +1,48 @@
+#include <stdio.h>
+
+float avista(float total){
+    total-=total*0.1;
+    return total;
+}
+float duas_vezes(float total) { // função para calcular em duas vezes 
+    return total/2;
+}
+
+double nparcelas(int parcela,float total){//função para aplicar o juros
+
+    if(total>100 && parcela>=3 && parcela<=10){
+        for (int i=0;i<parcela;i++){
+            total+=total*0.03;
+        }
+        return total;
+    }  
+    return 0;
+}
+
+int main()
+{
+    float total;
+    int parcela,caso;
+    printf("Digite o total da compra:\n");
+    scanf("%f",&total);
+    printf("Esolha uma das opções\n1- à vista\n2 -2x sem juros\n3- de 3 a 10x com juros\n");
+    scanf("%d",&caso);
+    if(caso==3){
+        printf("Escolha em quantas vezes no cartão casa Bahia\n");
+        scanf("%d",&parcela);
+    }    
+    switch(caso){
+        case 1:
+            printf("Total com 10 porcento de desconto :R$%.2f\n",avista(total));
+                break;
+        case 2:
+            printf("Total de cada parecela: R$%.2f\n",duas_vezes(total));
+                break;
+        case 3:
+            printf("total aplicado os juro :R$%.2f \n",nparcelas(parcela,total));
+                break;
+        default:
+            printf("opção inválida");
+    }
+    return 0;
+}
